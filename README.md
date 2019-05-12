@@ -4,10 +4,11 @@ In this project I have implemented a calculator function and deployed it on AWS 
 Once the APIs are exposed I have showed how to connect to the APIs using a rest client library.
 
 ####Environment
-Language : Java
-Build : Gradle
-Frameworks : Serverless
-Cloud provider : AWS
+    
+    Language : Java
+    Build : Gradle
+    Frameworks : Serverless, Jersey
+    Cloud provider : AWS
 
 ####Setup
 
@@ -59,5 +60,5 @@ Pass the following as query parameters:
 
 #####How to access the API Gateway
 
-The calculator API can be accessed using a REST client (POSTMAN) or through the CalculatorClient class in the project.
+The calculator API can be accessed using a REST client (POSTMAN) or through the com.serverless.client.CalculatorClient class in the project.
 

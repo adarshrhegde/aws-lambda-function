@@ -10,6 +10,9 @@ import org.apache.log4j.Logger;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Handles the response from the API Gateway
+ */
 public class ApiGatewayResponse {
 
 	private final int statusCode;
