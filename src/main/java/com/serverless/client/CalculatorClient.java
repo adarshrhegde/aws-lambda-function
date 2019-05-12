@@ -13,16 +13,29 @@ public class CalculatorClient {
         // Add the API Gateway url below
         String url = "https://o2y53cz951.execute-api.us-east-1.amazonaws.com/default/lambdaservice-dev-calculator";
 
+        // add request
         calculate(url,10, 5, "add");
 
+        // memory request
+        calculate(url,0, 0, "memory");
 
+        // subtract request
         calculate(url,10, 5, "subtract");
 
+        // memory request
+        calculate(url,0, 0, "memory");
 
+        // multiply request
         calculate(url,10, 5, "multiply");
 
+        // memory request
+        calculate(url,0, 0, "memory");
 
+        // divide request
         calculate(url,10, 5, "divide");
+
+        // memory request
+        calculate(url,0, 0, "memory");
 
     }
 
@@ -55,9 +68,15 @@ public class CalculatorClient {
 
             String output = response.getEntity(String.class);
 
-            System.out.println("The result of the arithmetic operation " +operator +
-                    " between " + operand1 + " and "
-                    + operand2 + " = " + output);
+            if(operator.equals("memory")){
+                System.out.println("The last computed result = " + output);
+
+            } else {
+                System.out.println("The result of the arithmetic operation " + operator +
+                        " between " + operand1 + " and "
+                        + operand2 + " = " + output);
+
+            }
 
         } catch (Exception e) {
 

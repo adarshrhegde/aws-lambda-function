@@ -22,7 +22,7 @@ Once the APIs are exposed I have showed how to connect to the APIs using a rest 
 
 ######AWS Lambda function
 
-I have used the AWS Lambda Java Library to implement the calculator function.
+I have used the AWS Lambda Java Library to implement the calculator function along with the ability to save the last computed result.
 
 The calculator function and its handler is configured in the serverless.yml file as follows:
 
@@ -54,11 +54,27 @@ Pass the following as query parameters:
 
        operand1=<num1>
        operand2=<num2>
-       operator=add     [add/subtract/multiply/divide]
+       operator=add     [add/subtract/multiply/divide/memory]
        
        Example: API_URL?operand1=2&operand2=5&operator=add
+       
+       Note: For the memory operation (result of last computation), operands can have any value 
 
 #####How to access the API Gateway
 
 The calculator API can be accessed using a REST client (POSTMAN) or through the com.serverless.client.CalculatorClient class in the project.
+The CalculatorClient has requests defined for all the above operations.
+
+#####Example Output:
+
+    The result of the arithmetic operation add between 10 and 5 = 15
+    The last computed result = 15
+    The result of the arithmetic operation subtract between 10 and 5 = 5
+    The last computed result = 15
+    The result of the arithmetic operation multiply between 10 and 5 = 50
+    The last computed result = 50
+    The result of the arithmetic operation divide between 10 and 5 = 2
+    The last computed result = 2
+
+
 

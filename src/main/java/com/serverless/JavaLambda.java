@@ -15,6 +15,8 @@ public class JavaLambda implements RequestHandler<Map<String, Object>, ApiGatewa
 
         private static final Logger LOG = Logger.getLogger(JavaLambda.class);
 
+        long memory = 0;
+
         /**
          * The handler for the calculator function
          * @param input
@@ -33,15 +35,22 @@ public class JavaLambda implements RequestHandler<Map<String, Object>, ApiGatewa
                 switch (node.get("operator").asText()) {
                         case "add":
                                 result = node.get("operand1").asInt() + node.get("operand2").asInt();
+                                memory = result;
                                 break;
                         case "subtract":
                                 result = node.get("operand1").asInt() - node.get("operand2").asInt();
+                                memory = result;
                                 break;
                         case "multiply":
                                 result = node.get("operand1").asInt() * node.get("operand2").asInt();
+                                memory = result;
                                 break;
                         case "divide":
                                 result = node.get("operand1").asInt() / node.get("operand2").asInt();
+                                memory = result;
+                                break;
+                        case "memory":
+                                result = memory;
                                 break;
                                 default:
                                 result = 0;
